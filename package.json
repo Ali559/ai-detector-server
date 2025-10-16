@@ -1,0 +1,33 @@
+{
+  "name": "ai-video-detector-server",
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/server.ts",
+    "build": "tsc",
+    "start": "node dist/server.js",
+    "typecheck": "tsc --noEmit",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "drizzle-kit migrate",
+    "db:push": "drizzle-kit push",
+    "db:studio": "drizzle-kit studio"
+  },
+  "dependencies": {
+    "@fastify/cors": "^11.1.0",
+    "@fastify/type-provider-typebox": "^6.0.0",
+    "@sinclair/typebox": "^0.34.41",
+    "better-auth": "^1.0.0",
+    "drizzle-orm": "^0.44.6",
+    "fastify": "^5.0.0",
+    "pg": "^8.11.0",
+    "pino-pretty": "^13.1.2"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@types/pg": "^8.10.0",
+    "dotenv": "^16.0.0",
+    "drizzle-kit": "^0.31.5",
+    "fastify-plugin": "^4.5.0",
+    "tsx": "^4.7.0",
+    "typescript": "^5.3.0"
+  }
+}
