@@ -13,6 +13,7 @@ The Video Frame Capture API receives video frames from client applications and a
 ## ✨ Features
 
 ### Core Functionality
+
 - **Multi-Provider AI Detection**: Integrates with Hive, Optic, and custom ML models
 - **Frame Analysis**: Processes up to 10 frames per request with parallel API calls
 - **Intelligent Caching**: Stores results using perceptual hashing to reduce costs
@@ -20,6 +21,7 @@ The Video Frame Capture API receives video frames from client applications and a
 - **Usage Analytics**: Detailed tracking of API costs and detection patterns
 
 ### Authentication & Authorization
+
 - **Email & OAuth**: Sign up with email or Google/GitHub/Microsoft
 - **BetterAuth Integration**: Modern, secure authentication
 - **Session Management**: JWT-based sessions with automatic refresh
@@ -27,6 +29,7 @@ The Video Frame Capture API receives video frames from client applications and a
 - **Role-based Access**: Free, Premium, and Enterprise tiers
 
 ### Subscription Management
+
 - **Stripe Integration**: Secure payment processing
 - **Flexible Billing**: Monthly and yearly subscriptions
 - **Webhook Handling**: Real-time updates from Stripe
@@ -34,6 +37,7 @@ The Video Frame Capture API receives video frames from client applications and a
 - **Payment Methods**: Store and manage multiple payment methods
 
 ### Premium Features
+
 - **API Key Management**: Create, rotate, and revoke API keys
 - **Custom Webhooks**: Event notifications for detection completion
 - **Dashboard Analytics**: Comprehensive usage statistics and trends
@@ -61,17 +65,20 @@ The Video Frame Capture API receives video frames from client applications and a
 ## 📊 Database Schema
 
 ### User Management
+
 - **users** - User accounts, subscription info, usage quotas
 - **accounts** - OAuth provider connections
 - **sessions** - Active user sessions with expiration
 - **api_keys** - API keys for programmatic access
 
 ### Detection System
+
 - **detection_results** - Video analysis results with metadata
 - **frame_analyses** - Individual frame detection data
 - **detection_cache** - Cached results (30-day TTL)
 
 ### Payment System
+
 - **subscriptions** - Active and past subscriptions
 - **invoices** - Billing history and invoice metadata
 - **payments** - Individual payment transactions
@@ -79,6 +86,7 @@ The Video Frame Capture API receives video frames from client applications and a
 - **pricing_plans** - Product catalog with features
 
 ### Analytics & Monitoring
+
 - **usage_logs** - API calls, costs, and resource usage
 - **webhooks** - User-configured webhook endpoints
 - **reports** - User feedback and false positive reports
@@ -182,6 +190,7 @@ POST   /api/auth/refresh
 ```
 
 **Example: Sign Up**
+
 ```bash
 curl -X POST http://localhost:3000/api/auth/signup \
   -H "Content-Type: application/json" \
@@ -204,6 +213,7 @@ DELETE /api/detect/:id                # Delete detection result
 ```
 
 **Example: Analyze Frames**
+
 ```bash
 curl -X POST http://localhost:3000/api/detect \
   -H "Authorization: Bearer YOUR_JWT_TOKEN" \
@@ -225,6 +235,7 @@ curl -X POST http://localhost:3000/api/detect \
 ```
 
 **Response:**
+
 ```json
 {
   "id": "uuid",
@@ -271,6 +282,7 @@ GET    /api/subscriptions/plans       # Get available plans
 ```
 
 **Example: Create Subscription**
+
 ```bash
 curl -X POST http://localhost:3000/api/subscriptions/create \
   -H "Authorization: Bearer YOUR_JWT_TOKEN" \
@@ -303,6 +315,7 @@ DELETE /api/api-keys/:id              # Revoke API key
 ```
 
 **Example: Create API Key**
+
 ```bash
 curl -X POST http://localhost:3000/api/api-keys \
   -H "Authorization: Bearer YOUR_JWT_TOKEN" \
@@ -338,6 +351,7 @@ POST   /api/admin/cache/clear         # Clear detection cache
 ## 💰 Pricing Tiers
 
 ### Free Tier
+
 - 20 detections per day (600/month)
 - Single AI detection provider
 - 30-day result retention
@@ -346,6 +360,7 @@ POST   /api/admin/cache/clear         # Clear detection cache
 **Daily Limit**: 20 | **Monthly Limit**: 600
 
 ### Premium Tier - $9.99/month
+
 - 500 detections per month (17/day avg)
 - Multi-provider AI consensus
 - Unlimited result retention
@@ -357,6 +372,7 @@ POST   /api/admin/cache/clear         # Clear detection cache
 **Daily Limit**: Flexible | **Monthly Limit**: 500
 
 ### Enterprise Tier - Custom Pricing
+
 - Unlimited detections
 - Custom ML model integration
 - Dedicated infrastructure
@@ -484,11 +500,13 @@ npm test -- auth.test.ts
 ## 📈 Monitoring & Analytics
 
 ### Logging
+
 - **Winston**: Structured logging with multiple transports
 - **Log Levels**: error, warn, info, debug
 - **Request Logging**: Automatic HTTP request/response logging
 
 ### Metrics
+
 - Detection success/failure rates
 - API response times
 - Provider performance comparison
@@ -497,6 +515,7 @@ npm test -- auth.test.ts
 - Revenue metrics
 
 ### Alerting
+
 - Failed payment notifications
 - High error rates
 - Unusual API usage patterns
@@ -598,4 +617,4 @@ MIT License - see [LICENSE](LICENSE) file for details
 
 ---
 
-**Built with ❤️ for content authenticity
+\*\*Built with ❤️ for content authenticity
